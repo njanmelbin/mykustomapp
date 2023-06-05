@@ -1,0 +1,22 @@
+resources:
+  - ../base
+  - config.yaml
+
+
+namespace: qa
+
+nameSuffix: -qa
+
+patches:
+- patch: |-
+    - op: replace
+      path: /spec/hosts
+      value: reviews.qa.svc.cluster.local
+  target: 
+    kind: VirtualService
+- patch: |-
+    - op: replace
+      path: /spec/http/0/route/0/destination/host
+      value: reviews.qa.svc.cluster.local
+  target: 
+    kind: VirtualService

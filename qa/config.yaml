@@ -1,0 +1,4 @@
+apiVersion: sample/v1alpha1
+kind: Ccc
+metadata:
+  name: planning
